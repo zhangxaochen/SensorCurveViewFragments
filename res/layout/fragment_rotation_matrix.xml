@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <CheckBox
+        android:id="@+id/checkBoxBodyFrame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="机身坐标系"
+        android:textSize="22sp" />
+
+    <CheckBox
+        android:id="@+id/checkBoxWorldFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/checkBoxBodyFrame"
+        android:text="世界坐标系"
+        android:textSize="22sp" />
+
+    <view
+        android:id="@+id/rotationMatrixView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/checkBoxBodyFrame"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        class="com.example.sensorcurveviewfragments.RotationMatrixView" />
+
+</RelativeLayout>
