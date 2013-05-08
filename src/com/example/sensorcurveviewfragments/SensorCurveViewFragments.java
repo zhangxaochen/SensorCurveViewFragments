@@ -307,7 +307,24 @@ class AccToVelocityFragment extends Fragment{
 	
 	void initWidgets(){
 		_avView=(AccToVelocityView) _layout.findViewById(R.id.accToVelocityView);
-		
+		CheckBox checkBoxAcc=(CheckBox) _layout.findViewById(R.id.checkBoxLinearAcc);
+		CheckBox checkBoxVel=(CheckBox) _layout.findViewById(R.id.checkBoxVelocity);
+		checkBoxAcc.setChecked(true);
+		checkBoxVel.setChecked(true);
+		checkBoxAcc.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				_avView.setAccCurveEnabled(isChecked);
+			}
+		});
+		checkBoxVel.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				_avView.setVelocityCurveEnabled(isChecked);
+			}
+		});
 	}
 	
 	@Override

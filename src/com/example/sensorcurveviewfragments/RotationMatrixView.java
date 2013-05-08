@@ -12,6 +12,7 @@ import android.util.AttributeSet;
 public class RotationMatrixView extends MyCurveView {
 	{
 		_type=new int[]{Sensor.TYPE_ACCELEROMETER, Sensor.TYPE_ROTATION_VECTOR};
+//		_type=new int[]{Sensor.TYPE_LINEAR_ACCELERATION, Sensor.TYPE_ROTATION_VECTOR};
 	}
 	boolean _worldFrameCurveEnabled = true, _bodyFrameCurveEnabled = true;
 
@@ -54,7 +55,8 @@ public class RotationMatrixView extends MyCurveView {
 			}
 			// 实验证实了 matA/B 完全一样。也见源码
 			SensorManager.getRotationMatrixFromVector(_matB, vals);
-		} else if (type == Sensor.TYPE_ACCELEROMETER) {
+		} else if (type == Sensor.TYPE_ACCELEROMETER
+				|| type == Sensor.TYPE_LINEAR_ACCELERATION) {
 			_lastVals = _vals.clone();
 			_lastWorldVals = _worldVals.clone();
 

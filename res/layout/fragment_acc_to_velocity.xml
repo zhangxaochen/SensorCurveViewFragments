@@ -5,10 +5,31 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <LinearLayout
+        android:id="@+id/atovCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <CheckBox
+            android:id="@+id/checkBoxLinearAcc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="linearAcc" />
+
+        <CheckBox
+            android:id="@+id/checkBoxVelocity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="velocity" />
+
+    </LinearLayout>
+
     <view
         android:id="@+id/accToVelocityView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/atovCheckBox"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         class="com.example.sensorcurveviewfragments.AccToVelocityView" />
