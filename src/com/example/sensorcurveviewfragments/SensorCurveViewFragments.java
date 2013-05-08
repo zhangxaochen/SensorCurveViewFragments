@@ -330,6 +330,8 @@ class AccToVelocityFragment extends Fragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		super.onCreateView(inflater, container, savedInstanceState);
+		System.out.println("AccToVelocityFragment.onCreateView");
 //		return super.onCreateView(inflater, container, savedInstanceState);
 		_layout=inflater.inflate(R.layout.fragment_acc_to_velocity, container, false);
 		initWidgets();

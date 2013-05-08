@@ -61,7 +61,7 @@ public class RotationMatrixView extends MyCurveView {
 			_lastWorldVals = _worldVals.clone();
 
 			_vals = vals.clone();
-			_worldVals = multiplyMV3(_matB, _vals);
+			_worldVals = Utils.multiplyMV3(_matB, _vals);
 
 			float newX = _lastX + _speed;
 			float base = _height / 2;
@@ -109,22 +109,6 @@ public class RotationMatrixView extends MyCurveView {
 		}
 
 	}// onSensorChanged
-
-	private float[] multiplyMV3(float[] mat, float[] vector) {
-		try {
-			if (!(mat.length == 9 && vector.length == 3))
-				throw new Exception();
-		} catch (Exception e) {
-			System.out.println("!(mat.length==9&&vector.length==3)");
-		}
-		float[] res = new float[3];
-		for (int i = 0; i < 3; i++) {
-			int idx = 3 * i;
-			res[i] = mat[idx] * vector[0] + mat[idx + 1] * vector[1]
-					+ mat[idx + 2] * vector[2];
-		}
-		return res;
-	}
 
 	public void setBodyFrameCurveEnabled(boolean enable) {
 		_bodyFrameCurveEnabled = enable;
